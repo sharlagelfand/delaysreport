@@ -16,7 +16,8 @@ You can install the development version of delaysreport from GitHub
 with:
 
 ``` r
-devtools::install_packages("sharlagelfand/delaysreport")
+# install.packages("devtools")
+devtools::install_github("sharlagelfand/delaysreport")
 ```
 
 ## Reporting

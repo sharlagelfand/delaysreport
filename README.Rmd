@@ -15,7 +15,8 @@ It is a toy package intended to accompany [this blogpost](https://sharla.party/p
 You can install the development version of delaysreport from GitHub with:
 
 ``` r
-devtools::install_packages("sharlagelfand/delaysreport")
+# install.packages("devtools")
+devtools::install_github("sharlagelfand/delaysreport")
 ```
 
 ## Reporting
