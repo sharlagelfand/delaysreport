@@ -6,7 +6,8 @@
 The goal of delaysreport is to help automate monthly reporting on the
 top 5 causes for delay on each TTC subway line.
 
-It is a toy package intended to accompany [this blogpost]() on using
+It is a toy package intended to accompany [this
+blogpost](https://sharla.party/posts/usethis-for-reporting/) on using
 `usethis`.
 
 ## Installation
