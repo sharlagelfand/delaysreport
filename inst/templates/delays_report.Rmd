@@ -1,0 +1,31 @@
+---
+title: "Top 5 delays, {{{ report_month }}} {{{ report_year }}}"
+output: html_document
+---
+
+```{r setup, echo=FALSE}
+library(dplyr)
+library(ggplot2)
+library(here)
+
+delays <- readRDS(here("reports", "{{{ report_year }}}", "{{{ report_month }}}", "delays_{{{ report_month }}}_{{{ report_year }}}_clean.rds"))
+```
+
+```{r, echo=FALSE}
+delays %>%
+  group_by(line, description) %>%
+  summarise(delays = sum(min_delay)) %>%
+  arrange(-delays) %>%
+  slice(1:5) %>%
+  ggplot(aes(x = description,
+             y = delays)) +
+  geom_col() + 
+  scale_x_discrete("") +
+  scale_y_continuous("Delay (minutes)") + 
+  ggtitle("Top 10 causes for delay, by line",
+          subtitle = "{{{ report_month }}} {{{ report_year }}}") + 
+  coord_flip() + 
+  facet_wrap(vars(line),
+             nrow = 1) + 
+  theme_minimal()
+```
